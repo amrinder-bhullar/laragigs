@@ -6,4 +6,7 @@
             <x-listing-card :listing="$listing" />
         @endforeach
     </div>
+    <div class="mt-6">
+        {{ $listings->links() }}
+    </div>
 </x-layout>
