@@ -1,5 +1,13 @@
 @props(['listing'])
-<x-card>
+<x-card class="relative">
+    <div class="absolute top-3 right-3">
+        <form action="/listings/{{ $listing->id }}/bookmark" method="POST">
+            @csrf
+            <button type="submit">
+                <i class="fa-regular fa-bookmark"></i>
+            </button>
+        </form>
+    </div>
     <div class="flex">
         <img class="hidden w-48 mr-6 md:block"
             src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('images/no-image.png') }}"

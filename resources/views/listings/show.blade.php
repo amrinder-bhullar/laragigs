@@ -39,16 +39,18 @@
                 </div>
             </div>
         </x-card>
-        @if (auth()->user()->id === $listing->user->id)
-            <x-card class="mt-4 p-2 flex space-x-6">
-                <a href="/listings/{{ $listing->id }}/edit"><i class="fa-solid fa-pencil"> Edit</i></a>
+        @auth
+            @if (auth()->user()->id === $listing->user->id)
+                <x-card class="mt-4 p-2 flex space-x-6">
+                    <a href="/listings/{{ $listing->id }}/edit"><i class="fa-solid fa-pencil"> Edit</i></a>
 
-                <form action="/listings/{{ $listing->id }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button class="text-red-500"><i class="fa-solid fa-trash"></i>DELETE</button>
-                </form>
-            </x-card>
-        @endif
+                    <form action="/listings/{{ $listing->id }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="text-red-500"><i class="fa-solid fa-trash"></i>DELETE</button>
+                    </form>
+                </x-card>
+            @endif
+        @endauth
     </div>
 </x-layout>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\UserController;
 use App\Models\Listing;
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 //homepage
 Route::get('/', [ListingController::class, 'index']);
+
+//Bookmark Controller
+//Store a bookmark
+Route::post('listings/{listing}/bookmark', [BookmarkController::class, 'store'])->middleware('auth');
 
 // Show Create Form
 Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');

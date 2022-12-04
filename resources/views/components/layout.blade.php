@@ -25,13 +25,14 @@
     <title>LaraGigs | Find Laravel Jobs & Projects</title>
 </head>
 
-<body class="mb-48">
+<body class="mb-48" x-data="{ SignUpShow: false }">
     <x-nav />
     <main>
         {{ $slot }}
     </main>
     <x-footer />
     <x-flash-message />
+    <x-modal />
 </body>
 
 </html>
