@@ -35,6 +35,16 @@
                                     class="fa-solid fa-globe"></i> Visit
                                 Website</a>
                         </div>
+                        <div class="mt-4">
+                            <form action="/listings/{{ $listing->id }}/apply" method="POST">
+                                @csrf
+                                <input type="hidden" name="listing_id" value="{{ $listing->id }}">
+                                <button type="submit"
+                                    class=" px-4 bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80 max-w-sm">
+                                    <i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i> Apply
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

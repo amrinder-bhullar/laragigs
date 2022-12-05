@@ -41,6 +41,16 @@
                 @enderror
 
                 <div class="mb-6">
+                    <label for="remote" class="inline-block text-lg mb-2">The position is remote</label>
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="remote"
+                        placeholder="Example: Remote, Boston MA, etc" value="1" />
+                </div>
+
+                @error('location')
+                    <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
+                @enderror
+
+                <div class="mb-6">
                     <label for="email" class="inline-block text-lg mb-2">Contact Email</label>
                     <input type="text" class="border border-gray-200 rounded p-2 w-full" name="email"
                         value="{{ old('email') }}" />

@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'John Doe',
             'email' => 'john@gmail.com'
         ]);
-        \App\Models\Listing::factory(6)->create([
-            'user_id' => $user->id
+        \App\Models\Listing::factory(12)->create([
+            'user_id' => $user->id,
         ]);
 
         // \App\Models\User::factory()->create([

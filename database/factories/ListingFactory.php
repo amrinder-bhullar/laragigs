@@ -23,6 +23,7 @@ class ListingFactory extends Factory
             'email' => fake()->unique()->companyEmail(),
             'website' => fake()->url(),
             'location' => fake()->city(),
+            'remote' => fake()->boolean(),
             'description' => fake()->paragraph(),
         ];
     }

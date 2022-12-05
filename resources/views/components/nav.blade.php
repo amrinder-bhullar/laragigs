@@ -6,8 +6,7 @@
                 <span class="font-bold uppercase">Welcome {{ auth()->user()->name }}</span>
             </li>
             <li>
-                <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Manage
-                    listings</a>
+                <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Dashboard </a>
             </li>
             <li>
                 <form action="/logout" method="POST" class="hover:text-laravel inline">

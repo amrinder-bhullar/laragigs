@@ -12,7 +12,8 @@ class ListingController extends Controller
     {
         // dd(request('tag'));
         return view('listings.index', [
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
+            'listings' => Listing::latest()->filter(request(['tag', 'search', 'remote']))->paginate(6),
+            'bookmarks' => auth()->user()->bookmarks ?? false
         ]);
     }
 
@@ -37,6 +38,7 @@ class ListingController extends Controller
             'title' => 'required',
             'company' => 'required',
             'location' => 'required',
+            'remote' => 'required',
             'website' => 'required',
             'email' => ['required', 'email'],
             'tags' => 'required',
@@ -46,6 +48,7 @@ class ListingController extends Controller
         if ($request->hasFile('logo')) {
             $attributes['logo'] = $request->file('logo')->store('logos', 'public');
         }
+
 
         $attributes['user_id'] = auth()->id();
 

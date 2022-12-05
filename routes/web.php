@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\UserController;
@@ -17,11 +18,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //homepage
+
 Route::get('/', [ListingController::class, 'index']);
 
 //Bookmark Controller
 //Store a bookmark
 Route::post('listings/{listing}/bookmark', [BookmarkController::class, 'store'])->middleware('auth');
+// Route::delete('listings/{listing}/bookmark/delete', [BookmarkController::class, 'destroy'])->middleware('auth');
+Route::delete('bookmarks/{bookmark}/delete', [BookmarkController::class, 'destroy'])->middleware('auth');
+Route::get('/bookmarks', [BookmarkController::class, 'index'])->middleware('auth');
+
+//Applications Controller
+Route::get('/applications', [ApplicationController::class, 'index'])->middleware('auth');
+Route::post('listings/{listing}/apply', [ApplicationController::class, 'store'])->middleware('auth');
 
 // Show Create Form
 Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
@@ -48,3 +57,5 @@ Route::post('/logout', [UserController::class, 'logout']);
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 // Login User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+// Route::view('{any?}', 'app')->where(['any' => '.*']);

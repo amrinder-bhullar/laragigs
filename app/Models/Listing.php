@@ -9,7 +9,7 @@ class Listing extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'company', 'location', 'website', 'email', 'tags', 'description', 'logo', 'user_id'];
+    protected $fillable = ['title', 'company', 'location', 'website', 'email', 'tags', 'description', 'logo', 'user_id', 'remote'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -22,6 +22,19 @@ class Listing extends Model
                 ->orWhere('description', 'like', '%' . request('search') . '%')
                 ->orWhere('tags', 'like', '%' . request('search') . '%');
         }
+
+        if ($filters['remote'] ?? false) {
+
+            switch (request('remote')) {
+                case 'true':
+                    $query->where('remote', 1)->orWhere('location', 'like', '%' . 'remote' . '%');
+                    break;
+
+                default:
+                    $query->where('remote', 0);
+                    break;
+            }
+        }
     }
 
     //Relationship to User
@@ -31,8 +44,15 @@ class Listing extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    // a listing has many bookmarks
+
     public function bookmarks()
     {
         return $this->hasMany(Bookmark::class);
+    }
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
     }
 }
