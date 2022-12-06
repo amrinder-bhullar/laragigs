@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('skills')->nullable();
-            $table->string('city')->nullable();
-            $table->longText('expirence')->nullable();
+            $table->string('address')->nullable();
+            $table->longText('experience')->nullable();
+            $table->longText('education')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });
