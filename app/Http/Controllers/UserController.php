@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -28,6 +29,11 @@ class UserController extends Controller
         $attributes['password'] = bcrypt($attributes['password']);
 
         $user = User::create($attributes);
+
+        //Create profile for the user
+        Profile::create([
+            'user_id' => $user->id
+        ]);
 
         //Login
         auth()->login($user);

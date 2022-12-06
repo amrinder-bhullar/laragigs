@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
@@ -57,5 +58,10 @@ Route::post('/logout', [UserController::class, 'logout']);
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 // Login User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+//Profile
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
+Route::get('/profile/{profile}/edit', [ProfileController::class, 'edit'])->middleware('auth');
+Route::put('/profile/{profile}/', [ProfileController::class, 'update'])->middleware('auth');
 
 // Route::view('{any?}', 'app')->where(['any' => '.*']);
