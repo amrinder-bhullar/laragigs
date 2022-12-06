@@ -12,5 +12,5 @@
             </button>
         </div>
     </div>
-    <a href="/?remote=true" class="px-2 py-3 text-white bg-laravel m-4 rounded">Show me Remote jobs</a>
+    {{-- <a href="/?remote=true" class="px-2 py-3 text-white bg-laravel m-4 rounded">Show me Remote jobs</a> --}}
 </form>

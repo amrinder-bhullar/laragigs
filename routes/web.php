@@ -5,7 +5,6 @@ use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
-use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
 
 /*

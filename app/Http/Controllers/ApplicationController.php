@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Listing;
 use App\Models\Application;
 use Illuminate\Http\Request;
+use App\Notifications\JobApplied;
+use Illuminate\Support\Facades\Notification;
 
 class ApplicationController extends Controller
 {
@@ -26,6 +28,10 @@ class ApplicationController extends Controller
                 'listing_id' => $listing->id,
                 'user_id' => auth()->id()
             ]);
+
+            $user = auth()->user();
+
+            Notification::send($user, new JobApplied());
 
             return back()->with('message', 'We have sent your job application to the employer');
         }

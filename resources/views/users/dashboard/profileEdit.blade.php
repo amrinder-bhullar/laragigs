@@ -2,7 +2,7 @@
     <x-card>
         <header>
             <h1 class="text-3xl text-center font-bold my-6 uppercase">
-                Your profile
+                {{ request()->url('/profile') ? 'Your profile' : 'Edit your profile' }}
             </h1>
         </header>
         <div class="flex">
@@ -108,7 +108,7 @@
                         <label for="experience" class="inline-block text-lg mb-2">
                             Experience
                         </label>
-                        <textarea class="border border-gray-200 rounded p-2 w-full" name="education" rows="10"
+                        <textarea class="border border-gray-200 rounded p-2 w-full" name="experience" rows="10"
                             placeholder="Include tasks, requirements, salary, etc">{{ $profile->experience }}</textarea>
                     </div>
 
