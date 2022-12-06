@@ -1,0 +1,725 @@
+<--------------- NBIS Form --------------->
+  <!-- NBIS installation -->
+  <script data-app="esc-out-of-stock"
+    type="text/json">[{% for variant in product.variants %}{"id":{{ variant.id }},"title":"{{ variant.title | escape }}","option1":{% if variant.option1 %}"{{ variant.option1 | escape }}"{% else %}null{% endif %},"option2":{% if variant.option2 %}"{{ variant.option2 | escape }}"{% else %}null{% endif %},"option3":{% if variant.option3 %}"{{ variant.option3 | escape }}"{% else %}null{% endif %},"sku":{% if variant.sku %}"{{ variant.sku | escape }}"{% else %}null{% endif %},"requires_shipping":{{ variant.requires_shipping }},"taxable":{{ variant.taxable }},"featured_image":{% if variant.featured_image %}"{{ variant.featured_image }}"{% else %}null{% endif %},"available":{{ variant.available }},"name":"{{ variant.name }} | escape","public_title":"{{ variant.public_title }} | escape","options":{{ variant.options | json }},"price":{{ variant.price }},"weight":{% if variant.weight %}{{ variant.weight }}{% else %}0{% endif %},"compare_at_price":{% if variant.compare_at_price %}{{ variant.compare_at_price }}{% else %}null{% endif %},"inventory_quantity":{{ variant.inventory_quantity }},"inventory_management":{% if variant.inventory_management %}"{{ variant.inventory_management }}"{% else %}null{% endif %},"inventory_policy":{% if variant.inventory_policy %}"{{ variant.inventory_policy }}"{% else %}null{% endif %},"barcode":{% if variant.barcode %}"{{ variant.barcode }}"{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}{% endfor %}]</script>
+  <script data-app="esc-out-of-stock-locale"
+    type="text/json">[{% for locale in shop.published_locales %}{% if locale.primary %}{"iso_code":"{{ locale.iso_code }}"}{% endif %}{% endfor %}]</script>
+  <div id="esc-oos-form"></div>
+
+  From: sku: {{ variant.sku | escape }}
+
+  to
+
+  sku: {{ variant.sku | replace: "\", '/' | escape }}
+
+  <script class="product-json" type="application/json">
+    {{ product | json }}
+  </script>
+
+  input.esc-email-input::-webkit-input-placeholder {
+  padding-left:10px;
+  }
+
+  div#esc-out-of-stock-inputs .esc-success {
+  color:blue;
+  }
+
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
+
+  <!-- custom JS -->
+
+  {{ 'custom.js' | asset_url | script_tag }}
+
+  setTimeout(function() {
+  const buttons_var = document.querySelectorAll(".color-false li")
+  for (const button_var of buttons_var) {
+  button_var.addEventListener('click', function(event) {
+  window.esc_now_back_in_stock.triggerRefresh();
+  })
+  }
+  }, 1000);
+
+  <!-- NBIS uses hideNBIS tag and if statement-->
+  {% if product.tags contains "hideNBIS" %}
+  {% else %}
+  <script data-app="esc-out-of-stock"
+    type="text/json">[{% for variant in product.variants %}{"id":{{ variant.id }},"title":"{{ variant.title | escape }}","option1":{% if variant.option1 %}"{{ variant.option1 | escape }}"{% else %}null{% endif %},"option2":{% if variant.option2 %}"{{ variant.option2 | escape }}"{% else %}null{% endif %},"option3":{% if variant.option3 %}"{{ variant.option3 | escape }}"{% else %}null{% endif %},"sku":{% if variant.sku %}"{{ variant.sku | escape }}"{% else %}null{% endif %},"requires_shipping":{{ variant.requires_shipping }},"taxable":{{ variant.taxable }},"featured_image":{% if variant.featured_image %}"{{ variant.featured_image }}"{% else %}null{% endif %},"available":{{ variant.available }},"name":"{{ variant.name }} | escape","public_title":"{{ variant.public_title }} | escape","options":{{ variant.options | json }},"price":{{ variant.price }},"weight":{% if variant.weight %}{{ variant.weight }}{% else %}0{% endif %},"compare_at_price":{% if variant.compare_at_price %}{{ variant.compare_at_price }}{% else %}null{% endif %},"inventory_quantity":{{ variant.inventory_quantity }},"inventory_management":{% if variant.inventory_management %}"{{ variant.inventory_management }}"{% else %}null{% endif %},"inventory_policy":{% if variant.inventory_policy %}"{{ variant.inventory_policy }}"{% else %}null{% endif %},"barcode":{% if variant.barcode %}"{{ variant.barcode }}"{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}{% endfor %}]</script>
+  <div id="esc-oos-form"></div>
+  {% endif %}
+
+  setTimeout(function() {
+const buttons_var = document.querySelectorAll('.swatches__form--label');
+
+for (const button_var of buttons_var) {
+  button_var.addEventListener('click', function(event) {
+      window.esc_now_back_in_stock.triggerRefresh();
+  })
+}
+}, 1000);
+
+  <--------------------- Size Matters --------------->
+    <!-- Size Matters installation -->
+    <div data-app="eastsideco_sizeGuides" data-shop="{{ shop.permanent_domain }}"
+      data-tags="{{ product.tags | join:',' | escape }}" data-metafields="{{ product.metafields.esc-size-matters.tag }}"
+      data-trigger-text="Size Guide" data-popup="link">
+    </div>
+
+    <style>
+      [data-app="eastsideco_sizeGuides"] a {
+        text-decoration: underline;
+      }
+    </style>
+
+    {%- if option_type == 'size' -%}{% endif %}
+    {% if option.name == 'Size' %}{% endif %}
+
+    <----------- Easy Redirect Script ------------->
+
+      <script id="esc-redirects-404-script" src="https://redirects.eastsideco.io/js/app.js"></script>
+
+      <--------------- Size guide on side of Size variant selector ----------------->
+        <div class="size-guide-inline">
+
+          {% if option.name == 'Size' %}{% endif %}
+
+          <div data-app="eastsideco_sizeGuides" data-shop="{{ shop.permanent_domain }}"
+            data-tags="{{ product.tags | join:',' | escape }}"
+            data-metafields="{{ product.metafields.esc-size-matters.tag }}" data-popup="link">
+          </div>
+          <style>
+            [data-app="eastsideco_sizeGuides"] a {
+              text-decoration: underline;
+            }
+
+            .size-guide-inline {
+              display: flex;
+              justify-content: space-between;
+            }
+          </style>
+          {% endif %}
+        </div>
+
+        @media (min-width: 750px) {
+        div.modal_container.modal_container {
+        position: fixed;
+        top: 20% !important;
+        }
+        }
+
+        div.esc-size-guide--popup .modal_container {
+        background: #fff;
+        color:black;
+        }
+
+        td.esc-size-guide--cell, .esc-size-guide--heading {
+        text-align:center;
+        }
+
+        <---------Cart Convert----------------->
+          <!-- Cart convert Cart page offers -->
+          <div data-app="eastsideco_cartOffers"></div>
+
+          <---------Cart Convert----------------->
+            <div data-app="eastsideco_cartOffers" data-position="product"></div>
+
+            <-------------------SM styles------------------------------>
+
+              <!-- Blurry Text -->
+              ​div.esc-size-guide--popup .modal_container{
+              transform: translate(-50%,-50%) scale(2);
+              zoom: 0.5;
+              }
+
+              <style>
+                [data-app="eastsideco_sizeGuides"] a {
+                  text-decoration: underline;
+                }
+              </style>
+              <style>
+                [data-app="eastsideco_sizeGuides"] a {
+                  text-decoration: underline;
+                }
+              </style>
+
+              [data-app="eastsideco_sizeGuides"] .btn {
+              color:red;
+              }
+
+              <--------------- When SM shows in centre ----------->
+
+                @media (min-width: 750px) {
+                div.modal_container.modal_container {
+                position: fixed;
+                top: 20% !important;
+                }
+                }
+
+                [data-app="eastsideco_sizeGuides"]:hover{
+                //app code is in product-option--color-swatch.liquid
+                color:#9999
+                }
+
+
+
+                <------ use tag to hide or show NBIS------>
+
+                  {% if product.tags contains "keyword" %}{% else %}YOUR CODE HERE{% endif %}
+
+                  <------ use tag to hideNBIS------>
+                    <!-- NBIS uses hideNBIS tag and if statement-->
+                    {% if product.tags contains "hideNBIS" %}
+                    {% else %}
+                    <script data-app="esc-out-of-stock"
+                      type="text/json">[{% for variant in product.variants %}{"id":{{ variant.id }},"title":"{{ variant.title | escape }}","option1":{% if variant.option1 %}"{{ variant.option1 | escape }}"{% else %}null{% endif %},"option2":{% if variant.option2 %}"{{ variant.option2 | escape }}"{% else %}null{% endif %},"option3":{% if variant.option3 %}"{{ variant.option3 | escape }}"{% else %}null{% endif %},"sku":{% if variant.sku %}"{{ variant.sku | escape }}"{% else %}null{% endif %},"requires_shipping":{{ variant.requires_shipping }},"taxable":{{ variant.taxable }},"featured_image":{% if variant.featured_image %}"{{ variant.featured_image }}"{% else %}null{% endif %},"available":{{ variant.available }},"name":"{{ variant.name }} | escape","public_title":"{{ variant.public_title }} | escape","options":{{ variant.options | json }},"price":{{ variant.price }},"weight":{% if variant.weight %}{{ variant.weight }}{% else %}0{% endif %},"compare_at_price":{% if variant.compare_at_price %}{{ variant.compare_at_price }}{% else %}null{% endif %},"inventory_quantity":{{ variant.inventory_quantity }},"inventory_management":{% if variant.inventory_management %}"{{ variant.inventory_management }}"{% else %}null{% endif %},"inventory_policy":{% if variant.inventory_policy %}"{{ variant.inventory_policy }}"{% else %}null{% endif %},"barcode":{% if variant.barcode %}"{{ variant.barcode }}"{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}{% endfor %}]</script>
+                    <div id="esc-oos-form"></div>
+                    {% endif %}
+
+                    <---------------------Size Matters--------------->
+
+                      <div data-app="eastsideco_sizeGuides" data-shop="{{ shop.permanent_domain }}"
+                        data-tags="{{ product.tags | join:',' | escape }}"
+                        data-metafields="{{ product.metafields.esc-size-matters.tag }}" data-popup="link">
+                      </div>
+
+                      Line 193 cart.liquid
+                      <div data-app="eastsideco_cartOffers"></div>
+
+                      line 31 product-template
+                      <div data-app="eastsideco_cartOffers" data-position="product"></div>
+
+
+                      {% if preorder == 0 %}
+                      <div {% unless current_variant.available %} style="display: none;" {% endunless %}
+                        class="preorder-notify">Notify me when Available</div>
+
+                      <div class="preorder-form">
+                        <!-- <div>
+                <div class="pre-f-desc">Fill your email below and we will notify you as soon as the products is back in stock!</div>
+                <div class="pre-f-form"><input type="email" placeholder="Your Email" /></div>
+                <div class="pre-f-btn">Notify me</div>
+              </div> -->
+                      </div>
+                      {% endif %}
+                      <div>
+                        <script data-app="esc-out-of-stock"
+                          type="text/json">[{% for variant in product.variants %}{"id":{{ variant.id }},"title":"{{ variant.title | escape }}","option1":{% if variant.option1 %}"{{ variant.option1 | escape }}"{% else %}null{% endif %},"option2":{% if variant.option2 %}"{{ variant.option2 | escape }}"{% else %}null{% endif %},"option3":{% if variant.option3 %}"{{ variant.option3 | escape }}"{% else %}null{% endif %},"sku":{% if variant.sku %}"{{ variant.sku | escape }}"{% else %}null{% endif %},"requires_shipping":{{ variant.requires_shipping }},"taxable":{{ variant.taxable }},"featured_image":{% if variant.featured_image %}"{{ variant.featured_image }}"{% else %}null{% endif %},"available":{{ variant.available }},"name":"{{ variant.name }} | escape","public_title":"{{ variant.public_title }} | escape","options":{{ variant.options | json }},"price":{{ variant.price }},"weight":{% if variant.weight %}{{ variant.weight }}{% else %}0{% endif %},"compare_at_price":{% if variant.compare_at_price %}{{ variant.compare_at_price }}{% else %}null{% endif %},"inventory_quantity":{{ variant.inventory_quantity }},"inventory_management":{% if variant.inventory_management %}"{{ variant.inventory_management }}"{% else %}null{% endif %},"inventory_policy":{% if variant.inventory_policy %}"{{ variant.inventory_policy }}"{% else %}null{% endif %},"barcode":{% if variant.barcode %}"{{ variant.barcode }}"{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}{% endfor %}]</script>
+                      </div>
+
+                      okhtein-mr : done -
+                      https://okhtein-mr.myshopify.com/admin/themes/82170937476?key=sections/product-template.liquid
+                      okhtein-us: done - https://okhtein-us.myshopify.com/admin/themes/75050713167
+                      okhtein-uk: done - https://okhtein-uk.myshopify.com/admin/themes/82205868163
+                      okhtein-eu: done - https://okhtein-eu.myshopify.com/admin/themes/82158616713
+                      okhtein-eg: done - https://okhtein-eg.myshopify.com/admin/themes/82096619659
+
+                      // Modal container
+
+                      <style>
+                        @media only screen and (max-width: 768px) {
+                          [data-app="eastsideco_sizeGuides"] .esc-size-guide--popup .modal_container {
+                            min-width: 40%;
+                          }
+                        }
+                      </style>
+
+                      30 March:
+
+
+
+                      ​@media only screen and (max-width: 768px) {
+                      [data-app="eastsideco_sizeGuides"] .esc-size-guide--popup .modal_container {
+                      min-width: 90%;
+                      }
+
+                      data-app="eastsideco_sizeGuides"] .esc-size-guide--popup .modal_container
+                      .esc-size-guide--cell-type--img {
+                      max-width: none;
+                      }
+                      }
+
+                      /\/(gallery\/.*)$/i /galleries/$1
+
+                      /gallery/✱ /galleries/●
+
+                      redirect /testnews/* to /blogs/news/$1
+
+
+
+                      Hi Kenny, Thanks for contacting support in order to proceed with installation I am sending you a
+                      collaborator account request. Please let me know when you accept it.
+                      ​
+                      ​
+                      ​Kind Regards
+
+
+                      163 : product-template.liquid
+
+
+                      #esc-out-of-stock-inputs .esc-email-container input {
+                      font-family: "Roboto Slab",serif;
+                      font-style: normal;
+                      font-weight: 400;
+                      font-size: 0.9375rem;
+                      z-index: 1;
+                      width: 100%;
+                      padding: 0.9375rem 0.875rem 0.9375rem;
+                      letter-spacing: 0em;
+                      color: #212121;
+                      background-color: #fff;
+                      border: 1px solid #212121;
+                      border-radius: 10px;
+                      }
+
+                      #esc-out-of-stock-inputs {
+                      border: 0;
+                      padding: 0;
+                      }
+
+                      #esc-out-of-stock-inputs .esc-btn {
+                      font-family: Montserrat,sans-serif;
+                      font-style: normal;
+                      font-weight: 700;
+                      font-size: 0.99219rem;
+                      display: inline-block;
+                      text-decoration: none;
+                      cursor: pointer;
+                      border-radius: 10px;
+                      transition: border-color 0.2s ease,background-color 0.2s ease,width 0.2s ease,height 0.2s ease;
+                      text-transform: uppercase;
+                      letter-spacing: 0.01em;
+                      width: 100%;
+                      margin-top: 1.17188rem;
+                      }
+
+                      <-------------- SM Top CSS issue ------------->
+                        style="position: fixed;top: 10%!important;"
+
+                        div.modal_container.modal_container {
+                        position: fixed;
+                        top: 15%!important;
+                        }
+
+                        <--------------- Notification Email ---------->
+
+                          notifications@nowinstock.co
+
+
+                          <---------------------->
+                            https://vegan-fashion-boutique.myshopify.com/admin/themes/44230410313?key=layout/theme.liquid
+
+                            {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
+                            <----------------------->
+
+
+                              <-------------------------- Jquery element update -------------------->
+
+                                <script>
+
+                                  $('.product-form').on('click', '.variant-custom-select li', function () { setInterval(function () { window.esc_now_back_in_stock.triggerRefresh() }, 200) });
+
+                                </script>
+
+                                <script>
+
+                                  $('.Popover__Content').on('click', '.Popover__ValueList button', function () { setInterval(function () { window.esc_now_back_in_stock.triggerRefresh() }, 200) });
+
+                                </script>
+                                <script>
+                                  $(".Popover__Value").click(function () {
+                                    setInterval(function () { window.esc_now_back_in_stock.triggerRefresh() }, 200)
+                                  });
+                                </script>
+
+                                <script>
+                                  $(".swatch-element input").click(function () {
+                                    setInterval(function () { window.esc_now_back_in_stock.triggerRefresh() }, 200)
+                                  });
+                                </script>
+
+                                <--------------------------Wishlist-------------------------------->
+                                  <div data-app="eastsideco_wishlist">
+                                    <esc-wishlist-add-to-wishlist :product="{{ product | json | escape }}">
+                                    </esc-wishlist-add-to-wishlist>
+                                  </div>
+
+                                  <------------------ Save for later inside loop -------->
+
+                                    <div data-app="eastsideco_wishlist">
+                                      <esc-wishlist-save-for-later product-id="{{ item.product_id }}"
+                                        variant-id="{{ item.variant_id }}">
+                                      </esc-wishlist-save-for-later>
+                                    </div>
+
+                                    <-------- fetch save for later data -------->
+                                      <div data-app="eastsideco_wishlist">
+                                        <esc-wishlist-cart :money-format="'{{ shop.money_format | escape }}'">
+                                        </esc-wishlist-cart>
+                                      </div>
+
+                                      <----------------- check jQuery version ------------->
+
+                                        jQuery().jquery
+
+                                        {% comment %} and {% endcomment %}
+
+                                        $('.selector-wrapper').on('click', '.single-option-selector option', function()
+                                        {
+                                        setInterval(function() { window.esc_now_back_in_stock.triggerRefresh() } , 200)
+                                        });
+
+                                        $(".single-option-selector option").click(function(){
+                                        setInterval(function() { window.esc_now_back_in_stock.triggerRefresh() } , 200)
+                                        });
+
+                                        <----------- Mail chimp issues ----------->
+
+                                          Filter might be applied.
+
+                                          Required tags
+
+                                          Audience fields and *|MERGE|* tags
+
+
+                                          <------------ SM with tags conditions ------------------->
+
+                                            ​{% if product.tags contains "sizeChart" %}
+
+                                            <div data-app="eastsideco_sizeGuides"
+                                              data-shop="{{ shop.permanent_domain }}"
+                                              data-tags="{{ product.tags | join:',' | escape }}"
+                                              data-metafields="{{ product.metafields.esc-size-matters.tag }}"
+                                              data-trigger-text="Text 1" data-popup="button">
+                                            </div>
+                                            ​{% endif %}
+                                            ​
+                                            {% if product.tags contains "moreInfo" %}
+
+                                            <div data-app="eastsideco_sizeGuides"
+                                              data-shop="{{ shop.permanent_domain }}"
+                                              data-tags="{{ product.tags | join:',' | escape }}"
+                                              data-metafields="{{ product.metafields.esc-size-matters.tag }}"
+                                              data-trigger-text="Text 2" data-popup="button">
+
+                                            </div>
+                                            {% endif %}
+
+                                            <----------------- NBIS Products with no form ---------->
+                                              {% if product.variants.size == 1 and product.variants.first.option1
+                                              contains
+                                              'Default' %}
+                                              code
+                                              {% endif %}
+
+                                              <---------------- comment ------------------------------->
+
+                                                {% comment %} {% endcomment %}
+
+                                                <------ If statement---------->
+                                                  {% if product.available %}
+                                                  {% endif %}
+
+                                                  <----------SM basic html for image-------->
+
+                                                    <html>
+
+                                                    <body> <img
+                                                        src="https://cdn.shopify.com/s/files/1/0278/5866/5558/files/Womens_measure_guide.jpg"
+                                                        alt="Measure guide" width="1000" height="1000"> </body>
+
+                                                    </html>
+
+                                                    <--------- JS for hiding other SM elements ----------->
+
+                                                      <script>
+                                                        $(document).ready(function () {
+                                                          var element = document.body.querySelectorAll('[data-app="eastsideco_sizeGuides"]');
+                                                          element[0].style.display = "block";
+                                                          console.log("Done!");
+                                                        });
+                                                      </script>
+
+
+                                                      <-------- SM parse all charts in a page ------->
+
+
+
+                                                        Here's that code by the way
+                                                        <div data-app="eastsideco_sizeGuides"
+                                                          data-shop="{{ shop.permanent_domain }}"
+                                                          data-tags="{{ collections.all.all_tags | join:',' | escape }}">
+                                                        </div>
+                                                        (edited)
+                                                        2:07
+                                                        It'll display all of the size charts used by any product in the
+                                                        'all' collection (by default, the whole shop)
+                                                        2:08
+                                                        If anyone wants to display a specific size chart, unrelated to
+                                                        any
+                                                        products, they can just put the tag in explicitly, like this
+                                                        (replace TAG1 etc. with the tags of the charts to display):
+                                                        <div data-app="eastsideco_sizeGuides"
+                                                          data-shop="{{ shop.permanent_domain }}" data-tags="TAG1,TAG2">
+                                                        </div>
+
+                                                        <-- Chart to render a spcecific tag -->
+
+                                                          <div data-app="eastsideco_sizeGuides"
+                                                            data-shop="{{ shop.permanent_domain }}" data-tags="tag1"
+                                                            data-metafields="{{ product.metafields.esc-size-matters.tag }}"
+                                                            data-trigger-text="tag 1 size chart" data-popup="button">
+                                                          </div>
+
+
+                                                          <--------------- Cart Convert Add button width and padding
+                                                            ---------->
+
+                                                            button.esc-cc__modern-container__add-to-cart {
+                                                            width:auto;
+                                                            padding: 5px 15px 5px 15px;
+                                                            }
+
+
+                                                            <! ---------- SM with Icon ------------>
+
+                                                              .size-matters {
+                                                              display:flex;
+                                                              }
+
+                                                              [data-app="eastsideco_sizeGuides"] {
+                                                              margin-left: 5px;
+                                                              }
+
+                                                              <!-- SM installed in pr_summary.liquid -->
+                                                              <div class="size-matters">
+                                                                <div>
+                                                                  <img
+                                                                    src="https://image.flaticon.com/icons/png/512/2922/2922895.png"
+                                                                    alt="Girl in a jacket" width="20" height="20">
+                                                                </div>
+                                                                <div data-app="eastsideco_sizeGuides"
+                                                                  data-shop="{{ shop.permanent_domain }}"
+                                                                  data-tags="{{ product.tags | join:',' | escape }}"
+                                                                  data-metafields="{{ product.metafields.esc-size-matters.tag }}"
+                                                                  data-trigger-text="Size Guide" data-popup="link">
+                                                                </div>
+                                                              </div>
+                                                              <style>
+                                                                [data-app="eastsideco_sizeGuides"] a {
+                                                                  text-decoration: underline;
+                                                                }
+                                                              </style>
+
+                                                              <-------- SM with ICON better method -->
+
+                                                                <div class="size-matters">
+                                                                  <div id="sm-icon" style="display:none;">
+                                                                    <img
+                                                                      src="https://image.flaticon.com/icons/png/512/2922/2922895.png"
+                                                                      alt="Girl in a jacket" width="40" height="40">
+                                                                  </div>
+                                                                  <div data-app="eastsideco_sizeGuides"
+                                                                    data-shop="{{ shop.permanent_domain }}"
+                                                                    data-tags="{{ product.tags | join:',' | escape }}"
+                                                                    data-metafields="{{ product.metafields.esc-size-matters.tag }}"
+                                                                    data-trigger-text="Size Chart" data-popup="button">
+                                                                  </div>
+                                                                </div>
+                                                                <style>
+                                                                  .size-matters {
+                                                                    display: flex;
+                                                                  }
+
+                                                                  [data-app="eastsideco_sizeGuides"] {
+                                                                    margin-left: 5px;
+                                                                  }
+                                                                </style>
+                                                                <script>
+                                                                  if (document.getElementsByClassName('esc-size-guide--popup')) {
+                                                                    document.getElementById("sm-icon").style.display = "block";
+                                                                  }
+                                                                </script>
+
+                                                                <---------- Liquid If statement for variant quantity
+                                                                  check -->
+                                                                  {% if product.variants.first.inventory_management ==
+                                                                  "shopify" and
+                                                                  product.variants.first.inventory_quantity
+                                                                  > 0 %}
+                                                                  {% else %}
+                                                                  {%- endif -%}
+
+
+                                                                  <!-- custom JS -->
+
+                                                                  {{ 'custom.js' | asset_url | script_tag }}
+
+                                                                  <!-- NBIS refresh with delay -->
+
+                                                                  <!-- NBIS Refresh trigger -->
+                                                                  <script>
+                                                                    var delay = 5000;
+                                                                    setTimeout(function () {
+                                                                      jQuery(".dropdown-content li").click(function () {
+                                                                        window.esc_now_back_in_stock.triggerRefresh();
+                                                                        console.log('clicked');
+                                                                      });
+                                                                      console.log("after 5 seconds")
+                                                                    }, delay);
+
+                                                                  </script>
+
+                                                                  <-- Size guide on side of Size variant selector -->
+                                                                    <div class="size-guide-inline">
+
+                                                                      {% if option.name == 'Size' %}
+
+                                                                      <div data-app="eastsideco_sizeGuides"
+                                                                        data-shop="{{ shop.permanent_domain }}"
+                                                                        data-tags="{{ product.tags | join:',' | escape }}"
+                                                                        data-metafields="{{ product.metafields.esc-size-matters.tag }}"
+                                                                        data-popup="link">
+                                                                      </div>
+                                                                      <style>
+                                                                        [data-app="eastsideco_sizeGuides"] a {
+                                                                          text-decoration: underline;
+                                                                        }
+
+                                                                        .size-guide-inline {
+                                                                          display: flex;
+                                                                          justify-content: space-between;
+                                                                        }
+                                                                      </style>
+                                                                      {% endif %}
+                                                                    </div>
+                                                                    -----------------------------
+
+                                                                    <------------------- Hide title and subtitle on
+                                                                      succsess of NBIS form -->
+
+                                                                      $( ".esc-btn" ).click(function() {
+                                                                      setTimeout(function() {
+                                                                      if($('.esc-email-input').css('display') == 'none')
+                                                                      {
+                                                                      $(".esc-out-of-stock-title,
+                                                                      .esc-out-of-stock-subtitle").hide();
+
+                                                                      } else {
+                                                                      console.log("visible")
+                                                                      }
+                                                                      }, 2000);
+                                                                      });
+
+
+                                                                      Check hindsight status:
+                                                                      window.__hindsight__.recording
+
+                                                                      You can also check :
+                                                                      window.__hindsight__environment__
+
+
+                                                                      <script data-app="esc-out-of-stock"
+                                                                        type="text/json">[  {% for variant in product.variants %}  {    "id": {{ variant.id }},    "title":"{{ variant.title | escape }}",    "option1":{% if variant.option1 %}"{{ variant.option1 | escape}}"{% else %}null{% endif %},    "option2":{% if variant.option2 %}"{{ variant.option2  | escape}}"{% else %}null{% endif %},    "option3":{% if variant.option3 %}"{{ variant.option3 | escape}}"{% else %}null{% endif %},    "sku":{% if variant.sku %}"{{ variant.sku }}"{% else %}null{% endif %},    "requires_shipping":{{ variant.requires_shipping }},    "taxable":{{ variant.taxable }},    "featured_image":{% if variant.featured_image %}"{{ variant.featured_image }}"{% else %}null{% endif %},    "available":{{ variant.available }},    "name":"{{ variant.name  | escape }}",    "public_title":"{{ variant.public_title | escape }}",    "options": {{ variant.options | json }},    "price":{{ variant.price }},    "weight":{% if variant.weight %}{{ variant.weight }}{% else %}0{% endif %},    "compare_at_price":{% if variant.compare_at_price %}{{ variant.compare_at_price }}{% else %}null{% endif %},    "inventory_quantity":{{ variant.inventory_quantity }},    "inventory_management":{% if variant.inventory_management %}"{{ variant.inventory_management }}"{% else %}null{% endif %},    "inventory_policy":{% if variant.inventory_policy %}"{{ variant.inventory_policy }}"{% else %}null{% endif %},    "barcode":{% if variant.barcode %}"{{ variant.barcode }}"{% else %}null{% endif %}  }{% unless forloop.last %},{% endunless %}  {% endfor %}]</script>
+                                                                      {% if product.options.size > 1 %}
+
+                                                                      // Code refresh form
+
+                                                                      setTimeout(function() {
+
+
+                                                                      const buttons_var =
+                                                                      document.querySelectorAll(".selectric-scroll li")
+                                                                      for (const button_var of buttons_var) {
+                                                                      button_var.addEventListener('click',
+                                                                      function(event)
+                                                                      {
+                                                                      window.esc_now_back_in_stock.triggerRefresh();
+                                                                      })
+                                                                      }
+
+
+                                                                      }, 1000);
+
+
+
+                                                                      <script>
+                                                                        var Shopify = Shopify || {};
+                                                                        Shopify.shop = "SHOPNAME.myshopify.com";
+                                                                      </script>
+
+                                                                      <!--- button CSS -->
+                                                                      button.esc-btn {
+                                                                      background-color: #000!important;
+                                                                      }
+
+                                                                      NBIS rendering twice ---------------->
+
+                                                                      setTimeout(function() {
+                                                                      var oosEl =
+                                                                      document.getElementById('esc-oos-form-app');
+                                                                      if (typeof(oosEl) != 'undefined' && oosEl != null)
+                                                                      {
+                                                                      oosEl.remove();
+                                                                      }
+                                                                      }, 2500);
+
+                                                                      <!-- If app does not trigger pop-up  ------------------>
+
+                                                                      window.addEventListener('esc-out-of-stock-loaded',
+                                                                      function (e) {
+
+                                                                      var nbisBtns =
+                                                                      document.getElementsByClassName('NBIS-Modal__btn');
+                                                                      nbisBtns[0].addEventListener('click', function
+                                                                      (event) {
+                                                                      event.preventDefault();
+                                                                      document.getElementById('esc-oos-form-app').style.display
+                                                                      = "block"
+                                                                      document.getElementById('esc-oos-form-app').style.visibility
+                                                                      = "visible"
+                                                                      document.getElementById('esc-oos-form-app').style.opacity
+                                                                      = 1
+                                                                      document.getElementById('esc-oos-form-app').style.zIndex
+                                                                      = '999999999999999';
+                                                                      });
+
+                                                                      var nbisBtnsClose =
+                                                                      document.getElementsByClassName('NBIS-Modal__close');
+
+                                                                      nbisBtnsClose[0].addEventListener('click',
+                                                                      function (event) {
+                                                                      event.preventDefault();
+                                                                      document.getElementById('esc-oos-form-app').style.display
+                                                                      = "none"
+                                                                      document.getElementById('esc-oos-form-app').style.visibility
+                                                                      = "hidden"
+                                                                      document.getElementById('esc-oos-form-app').style.opacity
+                                                                      = 0
+                                                                      });
+
+                                                                      document.getElementsByClassName('NBIS-Modal__popup')[0].style.top
+                                                                      = "20%";
+
+                                                                      });
+
+                                                                      <script>
+                                                                        setTimeout(function () {
+                                                                          const buttons_var = document.querySelectorAll('.Popover__Value');
+
+                                                                          for (const button_var of buttons_var) {
+                                                                            button_var.addEventListener('click', function (event) {
+                                                                              var element = document.querySelector("input[name='utf8']");
+                                                                              if ("createEvent" in document) {
+                                                                                var event = document.createEvent("HTMLEvents");
+                                                                                event.initEvent("change", false, true);
+                                                                                element.dispatchEvent(event);
+                                                                              } else {
+                                                                                element.fireEvent("onchange");
+                                                                              }
+                                                                            })
+                                                                          }
+                                                                        }, 500);
+                                                                      </script>
+
+                                                                      {% comment %}
+                                                                      {% render 'esc-nbis' %}
+                                                                      {% endcomment %}

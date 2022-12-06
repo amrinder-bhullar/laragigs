@@ -1,0 +1,513 @@
+<------- NBIS after installtion Email ---------->
+0121 333 9457 - 0121 507 2664
+Hi,
+
+Now Back in Stock is installed in your current theme, If you change your theme please inform us on this email we can reinstall it. You can check it on products that are currently out of stock.
+
+example:
+
+You'll only see the product in NBIS Dashboard when a product has at-least 1 signup email. Emails will be sent out once you change quantity in inventory or you can choose to disable automatic Emails settings you can change the colour of button or text as well in translation.
+
+If you are allowing products to oversell (sell even when out of stock) the form won't show because it's considered as normal product by shopify not out of stock product.
+
+If you want to test emails please make sure quantity in inventory is not 0 when you are trying to send the email.
+
+you can change form appearence from settings, you can display it as pop-up from button as well.
+​
+​Change button color: https://www.notion.so/eastsideco/Change-NBIS-Button-Colour-59b383b9a5324de6846e5eb5d9de7056
+
+​Change text: https://www.notion.so/eastsideco/How-to-Edit-Display-Text-on-the-Sign-Up-Form-or-add-a-Language-Translation-2fb11d7a0fbf49719ffe3645cc5a0d8f
+
+Please let me know if you have any queries regarding NBIS.
+
+Kind Regards
+
+​If you are using shopify theme please contact shopify support: https://help.shopify.com/en/manual/online-store/os/using-themes/theme-support
+
+<-------- SM Installed ---------->
+
+​Size Matters is now installed in your current theme, I added a test tag to following product so you can check it. You need to add same tag to product and Size Guide. You can use tags you are already using for products just add it to Size Guide and it'll show up in product page.
+​
+​Example:
+
+​please follow this guide to create your charts https://www.notion.so/eastsideco/Intro-to-Size-Matters-3cf5db8564c9478ca1d13e6ab5835dc8
+
+Kind Regards
+
+<------- SM on sending collaborator account ---------->
+
+Hi, Thank you for contacting support. I have sent you a collaborator account request in order to install the app.
+
+Please let me know when you accept it so I can proceed with installation.
+​
+​In meantime please follow this guide to create your first chart so you can be up and running after installation: https://www.notion.so/eastsideco/Intro-to-Size-Matters-3cf5db8564c9478ca1d13e6ab5835dc8
+
+Kind Regards
+
+<------- SM App Does not show ---------->
+
+Hi, Thanks for contacting support,
+
+If you have you installed it automatically, you will need to create your first size chart otherwise the link/button/sizeguide will not render on the product page.
+
+Please create your first chart and add the same tag you are using on your products. If you are not using any tags please add same tag to product and chart.
+
+Follow this Guide: https://www.notion.so/eastsideco/Intro-to-Size-Matters-3cf5db8564c9478ca1d13e6ab5835dc8
+
+Please let me know if this does not solve your problem.
+
+Kind Regards
+
+NO: You are doing Manual installation. If you are having problems we can do the installation for you. please contact us and create your charts.
+
+If you have already pasted the code in your theme: You have to create your first chart otherwise it'll not show up because there are no charts ​and please make sure you have added the same tag to both product and chart.
+
+Create one by following this guide: Follow this Guide: https://www.notion.so/eastsideco/Intro-to-Size-Matters-3cf5db8564c9478ca1d13e6ab5835dc8
+
+Please let me know if this does not solve your problem.
+
+Kind Regards
+
+<------------- Easy Redirect Error ------------------------>
+
+you already have a redirect for that path.
+​
+​Please go to: Online Store > Navigation > URL Redirects | under the title Navigation find the redirect with path either remove it or edit it. Shopify does not allow you to overwrite the redirect you need to remove the previous one. In case the path and target are as you want them to be and it is not redirecting then that is because the path is an active URL. Shopify allows only inactive(404) URLs to be redirected, please follow this guide which explains how it works:https://www.notion.so/eastsideco/How-to-Create-your-first-URL-Redirect-b817bc1c36044a06b18172b51219235a
+​
+​Kind regards
+
+<---- How Size Matters work -->
+
+The way Size matters work is as following it targets the tag so if you have added the tag in a product it does not matter the category or anything else the chart will show up.
+​
+​For example, once you have added the code(or we can do it for you in theme files) in shoes if you are already using tag shoes you can create a chart in the app add the tag shoes to chart it will show up in all the products that have tag shoes in them.
+​
+​Please use the following guide to create charts:https://www.notion.so/eastsideco/Intro-to-Size-Matters-3cf5db8564c9478ca1d13e6ab5835dc8
+​
+​Let me know if you have any other issues or queries.
+​
+​Kind regards
+
+<---------- NBIS Emails troubleshooting ---------->
+
+​Sometimes it may take a while to send out notifications as well depending on traffic servers have to deal with. Please follow these steps, it might be one of these issues.
+
+1. The product you are trying to send out notification for must have a positive inventory so quantity NOT 0, must be at-least 1.
+2. Check automatic emails are not disabled in settings https://www.notion.so/eastsideco/ Disable-Automatic-Emails-Notification-90f2d46230284b5fad27b513e8d03e6e
+3. Please confirm that you have not changed, added, deleted the variant before sending out the notifications. In this case, NBIS will not able to determine the correct variant hence will not send out emails.
+4. Use "check stock" button only if automatic emails are disabled or you changed the inventory while automatic emails were disabled and you have enabled it after updating it, use "Check stock" to send notifications.
+5. If you changed an out of stock product to "Continue to sell even out of stock" it will not send out notifications unless you add +1 inventory.
+6. It may take from few minutes to few hours to send out emails so wait for around 1 - 4 hours and check sent out emails log: https://www.notion.so/eastsideco/View-sent-emails-in-Now-Back-in-Stock-b2a87bd5b9a14b968e0309761d2203ff
+7. Have you modified the variants? deleted or changed anything like variant name etc? if yes you may have a different variant ID from the original which causes issue because now the subscriptions you have may not be used directly to trigger those emails.
+
+if the problem still persists please inform me so I can take a look.
+
+Kind Regards
+
+<-------- Easy Redirect Primary and Secondary domain ------->
+
+​Thanks for contacting support, Our app may help you once you have configured everything else.
+​
+Here's the process to follow:
+​
+​So in order to achieve desired result here's what you can do: Add https://mainWebsite.com/ as primary domain in shopify, and https://SecondWebsite.com as secondary domain, this will route all the traffic from old domain to new one.
+
+​If you are using third party Registrar you can simply point your dns to your shopify website or create a redirect in your domain management panel.
+​​
+​Once visitor is on https://MainWebsite.com/ new domain then follow these steps :
+
+From https://SecondWebsite.com/shirts/follow-me-shirt-navy/ TO. https://MainWebsite.com/products/follow-me-shirt-navy or https://MainWebsite.com/collections/tops/products/follow-me-shirt-navy same thing.
+
+Here's how it will work: once you have added your website to shopify, you must create either all simple redirects
+
+Path: /shirts/follow-me-shirt-navy/
+Target: /products/follow-me-shirt-navy
+
+products in collections and products are /collections/tops/products/follow-me-shirt-navy = /products/follow-me-shirt-navy both same
+
+You can follow this guide for bulk upload: https://www.notion.so/eastsideco/How-to-upload-bulk-url-redirect-9537fda949b74655b2b67f5ff85bf817
+
+The better way if this is going to be true for all products then you can use Redirect Pattern:
+
+Path: /shirts/✱
+Target: /products/●
+
+Please let me know if this answers your question or if you have any other query.
+
+Kind Regards
+
+​If your previous domain was on shopify you might not need our app if you create all the urls as they were previously created. If you change category or name etc or you were using a different platform.
+
+<-------------------- Easy Redirect troubleshooting ---------------->
+
+Please follow these steps to identify the problem:
+​
+
+1. ​Shopify does not allow to redirect page that exists(active = not 404), you can only redirect from a page once it has been removed so a 404.
+   ​
+   ​If this is not the case then
+   ​
+   ​2) Please check the URL: It must be something like this Path: /products/name-of-the-product | Target: /collections/name-of-collection
+   ​\*Note: /collections/name-of-collection/products/name-of-the-product is same as /products/name-of-the-product
+   ​
+   ​3) If you need to redirect to external website, make sure the path must be 404 and target must be added like this: http://TargetWebsite.com/
+   ​
+   ​4) If you are getting getting an error: Redirect Creation Failed. Make sure path is unique
+   ​
+   ​in this case please check you are not adding the path again. Just to make sure copy the path and paste it after your domain yourwebsite.com/copied-path if it is redirecting it means that there's already a redirection created with this path and it is not possible to redirect it again unless old redirection is not deleted.
+   ​
+   ​If you are still unable to resolve the problem, Please let me know what errors are you getting and if possible include Screenshot.
+   ​
+   ​Kind Regard
+
+<------------------ Cart Convert troubleshoot ---------------->
+
+​Can you please follow these steps to ensure if it is one of the following issues:
+
+​1) Please check in offer you have made you have selected the option to show it on product page popup or cart page popup.
+​2) Make sure conditions are met. if you have selected to show a single product in popup offer, It will not show on the same product that you decided to show.
+​3) Please check in settings you have not disabled Cart Convert on that position.
+​4) Popup will not show up if you are using AJAX cart, so in order to show popup you'll need to use cart page and not ajax.
+
+​Please let me know if this does not solve your issue.
+​
+​Kind Regards
+
+<------------------ Custom Email Tags ---------------->
+
+Here is a guide to help you with creating your own custom email template: https://webdesign.tutsplus.com/articles/build-an-html-email-template-from-scratch--webdesign-12770
+
+In regards to customizing your HTML email template, you can use the following placeholders:
+
+{{image_src}} - product image URL
+{{shop_name}} - name of your shop
+{{product_title}} - name of the product and variant
+{{product_link}} - URL of the product
+Let me know if you have any questions :)
+
+<------------- Samesite error ------------->
+Hi,
+
+We have already updated it in March but it looks like there are still some issues. Please try with another browser.
+​
+​If you are on a mobile device, please try to access it from the desktop.
+
+If you are still having issues please let me know.
+
+Kind Regards
+
+<------------------- Busy Servers ------------------->
+
+​Usually, it takes 10 - 15 minutes but it may take longer if servers are very busy up to 1 - 2 hours. But yesterday we had some issues with servers, which is fixed now but you still might face some delays until everything is sent out from yesterday, afterward it should be pretty fast. Give it around 24 hours before testing again.
+​
+​Kind Regards
+
+​Thank you for contacting support, We apologize for any inconvenience that the app has created, we had some issues with servers since yesterday, which is fixed now but you still might face some delays until everything is sent out from yesterday, afterward it should be pretty fast. Give it around 24 hours before sending it again.
+
+​Kind Regards
+
+<--------------- Notification Email ---------->
+
+Hi,
+
+Thank you for contacting support.
+
+No, the current notification outgoing email is notifications@nowinstock.co, We use our own servers to send out emails and currently, we are not able to change this email.
+
+Please let me know if you have any further inquiries.
+
+Kind Regards
+
+<----------------- SM Troubleshoot -------------->
+
+Hi,
+
+1. Please check the product and Size Chart must have a matching tag, not all of them just one matching tag and size chart will show up.
+
+2. Please check display chart under chart name must be checked.
+
+If this does not solve your problem Please send me screenshot of chart you want to display, Product tags area and product url.
+
+Kind Regards
+
+<-------------- Add the code to theme.scss.css ----------------->
+
+Looks like some other CSS is interfering with Size Matters code.
+
+Please add the following code at the bottom to your theme.scss.css file. You can find it in Online Store> Themes > Actions > Edit Code > Assets > theme.scss.css or theme.scss.liquid
+
+@media (min-width: 750px) {
+div.modal_container.modal_container {
+position: fixed;
+top: 20% !important;
+}
+}
+​
+​It may take some time to show depending on your browser cache, please delete cache if you do not see the changes or use another browser.
+​
+​Let me know if this does not solve your issue.
+
+Kind Regards
+
+<--------------->
+
+div.esc-size-guide--popup .modal_container {
+background: #000;
+color: #fff;  
+}
+
+<------------- How does NBIS works and integration --------------->
+
+Hi,
+
+Thank you for contacting support,
+
+Now Back in Stock does not need any software or third-party service to work. Once you install it and add the code to your store ( we offer free support for installation).
+
+Your visitor can sign-up on products that are currently out of stock. Once they are back in stock and you update the inventory NBIS will check it and will send the emails automatically without you doing anything.
+
+We have MailChimp and dotmailer integration if user wants to capture the signed up emails to send them newsletter or offers later.
+MailChimp Guide: https://docs.eastsideco.com/article/84-mailchimp-integration
+​
+​Please let me know if you have any other queries regarding this app.
+​
+​Kind Regards
+
+---------- URL Redirects -------------------------->
+
+Online Store > Navigation > View URL Redirects | at top right
+
+-------------------- 404 Fix Error --------------->
+
+Hi , You can get this error when there is already a redirect for that path. Please check it by going to the URL. If it redirects it means you need to delete previous one in order to create new one. If it is redirecting where you want it to redirect then simply ignore it.
+
+You can check if it already exists by going here: Online Store > Navigation > URL Redirects | under the title Navigation.
+
+Shopify allows you to redirect only if the path is inactive URL(404), in order to redirect from this page/product either please disable it or delete it. It should return a 404 error if redirect is already added it will just start redirecting.
+
+​To see full guide on this error please check: https://www.notion.so/eastsideco/Why-I-am-getting-an-error-when-I-try-to-fix-404-errors-d0e42bc4b0734f16b8251a936da49b8a
+
+​Please follow this guide to understand better how app works: https://www.notion.so/eastsideco/How-to-Create-your-first-URL-Redirect-b817bc1c36044a06b18172b51219235a
+
+If this does not solve your issue please let me know.
+
+Kind regards
+
+<---------------- File Compression ------------------>
+
+​Thank you for contacting support.
+​
+​Our files are already minified and they run through compression algorithms, Cart Convert is a public app, and app is designed to run on multiple stores which is why we cannot compress it any further which might affect the functionality.
+​
+​Please let me know if you have any further queries or issues.
+​
+
+<------------- Feature not available ------------------>
+Hi,
+​
+​Unfortunately, the feature you are after is not available in the app.
+​
+​Your feedback is very valuable to us. I'll pass this information to our management so in future we can create a better app experience.
+​
+​Please let me know if you have any other issues or queries.
+​
+​Kind Regards
+
+<------------ Pop-up is not showing ------------------>
+
+​1) please check the offer you have created to check what conditions you have implemented and if you are meeting those conditions for example if it is simple cart total between 10 - 100 you have a product in cart atleast worth of 10. otherwise pop-up will not show.
+​
+​2) Check you have enabled the offer and check where have you enabled it on product page pop-up or cart pop-up?
+​
+​3) Make sure you are not testing it on the offered product. If you are testing it on the same product you are offering in a pop-up the offer will not show.
+​
+​If it is still not working please let me know.
+
+<----- Support password -->
+FohngeeNah9wohph1Ke2pohHah4yoo
+
+<-------Redirect not working -->
+
+Shopify allows you to redirect only if the path is inactive URL(404), in order to redirect from this page/product either please disable it or delete it. It should return a 404 error if redirect is already added it will just start redirecting. Please follow this guide: https://www.notion.so/eastsideco/How-to-Create-your-first-URL-Redirect-b817bc1c36044a06b18172b51219235a
+​
+​Please let me know if you have any other issues or queries.
+​
+​Kind regards
+
+<-------- How to delete redirects -->
+
+Hi, Easy redirects request the data from Shopify database which, unfortunately, results in slow response, if you need to modify the redirect or delete it please go to Online Store > Navigation > URL Redirects | under the title Navigation.
+
+Please let me know if this does not solve your issue.
+
+Kind regards.
+
+<------ Size matters link text ------>
+
+Hi,
+​
+​Thank you for contacting support,
+​
+​Please follow this guide to change the text: https://www.notion.so/eastsideco/How-to-change-button-link-text-in-Size-Matters-316792a4df594846a4d16d41cef5db66
+​
+​Please let me know if you have any other issues or queries.
+​
+​Kind regards
+
+<---------- Size Matters how to add images ------->
+
+Hi,
+
+Thank you for contacting support,
+
+Please follow this guide if you wish to add the image in a cell: https://www.notion.so/eastsideco/How-to-add-image-to-Size-Matters-Chart-3b624fbd626b4694b1ae1ea69a3f591e
+
+If you wish to add image at top or bottom of the size chart please follow this guide: https://www.notion.so/eastsideco/adding-image-top-or-bottom-of-chart-b37d15e7ab664cf98894984b2f8dbf19
+
+Please let me know if you have any other issues or queries.
+
+Kind regards
+
+<---------- How redirect patterns work ---------->
+
+Usually, you would have to create a CSV file with old URLs and new URLs and upload it and app can create redirects for you.
+
+Other solution might be, redirect using redirect patterns, you'll need to find patterns in your URLs and create patterns which will redirect according to it.
+
+For example you have URL yourstore.com/collections/xyz/products/abc you want to redirect all the inactive URLs from /collections/xyz/products/abc to /collections/MNO/
+
+You can create a pattern /collections/xyz/_ target /collections/MNO/_
+
+the target URL must not be 404, so you must have a product in /collections/MNO/products/abc
+
+So when you visit yourstore.com/collections/xyz/products/abc it will redirect to yourstore.com/collections/MNO/products/abc
+
+Please let me know if you have any other issues or queries.
+
+Kind regards
+
+<-- Why there are no 404 errors in 404 Dashboard -->
+
+​a 404 error occurs when a URL is inactive in your domain and does not result in anything. You might have deleted or disabled some products which means their URLs return a 404 error, now if you have there URLs in newsletters or on social media when someone clicks on it they will get a 404 error and will not able to purchase the product.
+​
+What Easy Redirect does is, report to you that someone hit a 404 page so you can redirect it. Easy Redirect DOES NOT tell you 404 before someone gets an error because every random URL can be a 404 so they are infinite.
+​
+If you have recently installed Easy redirects so there is no database from where it can pull the data of what URLs are resulting in 404s, but it will help you build a database over time.
+​
+Please let me know if you have any other issues or queries.​
+​
+​Kind regards
+
+<------ how Size matters work ----->
+
+​Size matters help you create and display size charts, first you need to go to the app in apps sections, when you click on it you will be taken to the dashboard where you can create size guides, the app hasn't got size guides you need to create it according to your product, either your supplier has given you the measurements or you can measure it yourself.
+​
+​Once you have created the size chart you need to add the chart name and the TAG now it is very important to use the tag, that is how Size matters is able to identify where it should render the size guide.
+​
+​The app is designed in a way that you can create as many size guides as you wish, all you need to do is add the exact same(be careful of uppercase or lowercase) tag, if the product has the same tag it will display the size guide if it does not has the tag it will not display it.
+​
+​As I told you earlier this is a step-by-step guide: https://www.notion.so/eastsideco/Intro-to-Size-Matters-3cf5db8564c9478ca1d13e6ab5835dc8 you can follow it's step apply the same method to your size guides and you should be up and running.
+​
+
+Hi,
+
+Please make sure you are not using safari as it may show this error. If the issue is you are not able to access the app on other browsers as well, we apologize for the inconvenience the server issue has been fixed.
+
+Kind regards
+
+104685695
+
+<------ Easy redirects export --------->
+Hi,
+
+Easy redirect app itself does not store your redirects, if you are using simple redirects instead it saves them in shopify database, so even if you remove the app redirects will continue to work.
+
+you can export them here: Online Store > Navigation > View URL Redirects | near Add menu or follow this guide: https://intercom.help/eastside-co/en/articles/5833391-exporting-your-simple-redirects
+
+If you are looking for easy redirects specifically you can identify them at the end of target it will follow #erid##### series of numbers.
+
+Please let me know if you have any other issues or queries.
+
+Kind regards
+
+<----------Easy redirects manual installation shopify 2.0-------->
+
+Hi, you must have shopify 2.0 theme, with new themes shopify has changed the structure for some themes automatic installation is not working. You can do a manual installation of code.
+
+Please follow this guide: https://intercom.help/eastside-co/en/articles/5831399-online-store-2-0-installation
+
+If you are having any issues or you are unable to do it yourself please let me know because I can do it for you.
+
+Kind regards
+
+<------ server down ------->
+​I apologize I have checked with our dev team, the servers are in maintenance at the moment, we had technical issues, hopefully, this will be resolved by the end of the day and it will take around 5-6 hours once servers are online.
+​
+​I apologize for the inconvenience, please let me know if you have any other issues or queries.
+​
+​Kind regards
+
+bushburryhillprimary@wolverhampton.gov.uk
+office@wodnesfield.org
+
+<------Change text---->
+
+Hi,
+
+Thank you for contacting support,
+
+To change the text please follow this guide: https://www.notion.so/eastsideco/How-to-Edit-Display-Text-on-the-Sign-Up-Form-or-add-a-Language-Translation-2fb11d7a0fbf49719ffe3645cc5a0d8f
+
+If you have any further issues or queries, please let me know.
+
+Kind regards
+
+< -------NBIS export-------->
+Hi, Thank you for contacting support.
+​
+​You can do it from the app itself, please follow this guide: https://www.notion.so/eastsideco/How-to-Export-Subscriptions-Notification-Requests-462a7fa69eee466fa39cda118e4c69f2
+​
+​If you have any other issues or queries, please let me know.
+​
+​Kind regards
+
+<----------------------->
+Please follow this guide for bulk upload redirects: https://www.notion.so/eastsideco/How-to-upload-bulk-url-redirect-9537fda949b74655b2b67f5ff85bf817
+
+To discuss with Jason:
+
+NBIS - reinstallation
+
+NBIS sending out notifications even if product is not online
+
+3rd time in a week where SM was not displaying on a store asyncLoad() issues.
+
+Tobi had an issue with cart convert on new theme, CC does not support multi-currency
+
+Easy redirects a banner when redirecting to new URL "Sorry the item you were looking for has been soldout we think these may intrest you!"
+
+Easy Redirects:
+
+It is used to create 301 redirects in shopify, i.e. when you delete a product and don't want to lose SEO so you redirect it to another product and vitior will not hit a 404 page on your store.
+
+The redirect needs to meet 2 conditions the path(old URL) must be 404 and target(new URL) needs to be an active URL.
+
+in the premium version of the app it logs all the URLs that have hit the 404 page because they do not exist on the server anymore. You can fix 404s from that dashboard, you can also fix 404s by downloading them as CSV and add target(new URL) and upload it to the app, but doing so will not clear the 404 logs automatically if you wish to clear it you need to do it one by one we cannot do it from our side(backend)
+
+Premium version also includes redirect patterns where you define the pattern which the app would check if the 404 meets the defined condition of pattern app creates a redirect for it automatically.
+
+It is merchants job to understand how the redirect patterns work and add them according to their need we do not create redirects patterns or upload CSV for them.
+
+Wishlist:
+
+The app is designed to show up on product page where user can save the product in wishlist by clicking on heart icon, and can retrive the saved items in wishlist page.
+
+We do not save any user specific data, we don't have user's name/email etc the data which is saved in database is mostly for the app and even though we can export the data but it is pretty much useless for anyone else.
+
+We can do the initial setup and look into an app specific issue(like wishlist not showing up or CSS issues)
+
+Back in Stock:
+
+Back is designed to show up on product page specifically and will render only if variant/product is out of stock. Once signed up customer will get notified when a product is back in stock. If the merchant deletes/modifies the product and shopify assigns a new variant ID to the product previous emails/subscriptions will not be triggered because the variant ID where app is listening to changes is not active anymore at that point merchant needs to get the data from old product and add to new product(when it is out of stock or change settings in app to not send out notifications unless it hits a certain quota).
+
+App has an interface to export data so we do not do it from the backend unless they run into an issue.
